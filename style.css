@@ -1,65 +1,182 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+:root{
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsla(222, 100%, 96%, 0.5);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+    /* BG COLOR */
+    --Light-slate-blue: hsl(252, 100%, 67%);
+    --Light-royal-blue: hsl(241, 81%, 54%);
+    /* CIRCLE COLOR */
+    --Violet-blue: hsla(256, 72%, 46%, 1);
+    --Persian-blue: hsla(241, 72%, 46%, 0);
+}
+
 *{
     font-family: 'Hanken Grotesk', sans-serif;
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+}
+
+.result p{
     font-size: 18px;
 }
 
 .container{
-    height: 400px;
-    width: 600px;
+    height: 512px;
+    width: 736px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.463);
     display: grid;
     grid-template-columns: repeat(2 , 1fr);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
     border-radius: 30px;
-    overflow: hidden;
 }
 
 .result{
-    background-image: linear-gradient(to top right , #7857ff , #2e2be9);
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    gap: 50px;
+    background-image: linear-gradient(to top right , var(--Light-slate-blue), var(--Light-royal-blue) );
+    border-radius: 30px;
 }
 
-.result .perc{
-    height: 150px;
-    width: 150px;
+.result>h1{
+    color: var(--Light-lavender);
+    margin: 44px 0px;
+    font-size: 23px;
+}
+
+.result .circle{
+    height: 170px;
+    width: 170px;
     border-radius: 50%;
-    background-image: linear-gradient(to bottom , #4e21ca , #2421ca00);
+    background-image: linear-gradient(to bottom , var(--Violet-blue) , var(--Persian-blue));
+    margin-bottom: 44px;
+    justify-content: center;
 }
 
-.result>:first-child{
-    color: #c8c7ff ;
-}
 
-.result .perc span{
+.result .circle span{
+    color: var(--White);
+    font-size: 65px;
     font-weight: 800;
-    font-size: 60px;
-    color: white;
 }
 
-.result .perc p{
-    color: #c8c7ff;
+.result .circle p{
+    color: var(--Pale-blue);
 }
 
-.msg{
-    margin-top: -10px;
-}
-.msg p{
-    width: 250px;
+.result .msg{
     text-align: center;
+    width: 250px;
+    color: var(--White);
+    margin-bottom: 60px;
 }
 
+.result .msg h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.summary{
+    margin-left: 40px;
+}
+
+.summary>h1{
+    color: var(--Dark-gray-blue);
+    margin: 44px 0px;
+    font-size: 23px;
+}
+
+.summary .rows{
+    height: 283px;
+    width: 268px;
+}
+
+.summary .rows div{
+    display: flex;
+    align-items: center;
+    height: 55px;
+    margin: 15px 0px;
+    position: relative;
+    padding-left: 10px;
+    border-radius: 15px;
+
+}
+
+.summary .rows div h4:first-of-type{
+    margin-left: 15px;
+}
+
+.summary .rows div p{
+    position: absolute;
+    right: 15px;
+    color: var(--Dark-gray-blue);
+}
+
+.summary .rows div span{
+    opacity: 0.5;
+}
+
+.summary .rows div:nth-child(1){
+    background-color: hsla(0, 100%, 67%, 0.2);
+    color:hsla(0, 100%, 67%);
+    ;
+}
+
+.summary .rows div:nth-child(2){
+    background-color: hsla(39, 100%, 56% , 0.2);
+    color: hsla(39, 100%, 56%) ;
+}
+
+.summary .rows div:nth-child(3){
+    background-color: hsla(166, 100%, 37%, 0.2);
+    color: hsla(166, 100%, 37%);
+}
+
+.summary .rows div:nth-child(4){
+    background-color: hsla(234, 85%, 45% , 0.2);
+    color: hsla(234, 85%, 45%);
+}
+
+.summary button{
+    display: block;
+    border: none;
+    background-image: linear-gradient(to bottom , var(--Light-slate-blue), var(--Light-royal-blue) );
+    background-color: var(--Dark-gray-blue);
+    height: 60px;
+    width: 268px;
+    border-radius: 30px;
+    position: absolute;
+    margin: 10px auto;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.summary button:hover{
+    background-image: none;
+}
+
+@media (max-width:400px) {
+    .container{
+    height: 100%;
+    width: 100%;
+    grid-template-columns: none;
+    grid-template-rows: repeat(2 , fr);
+    }
+    .result{
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    .result .msg{
+        width: 290px;
+    }
+}
 .flex-center{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
