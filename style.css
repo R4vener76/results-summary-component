@@ -28,18 +28,24 @@
     font-size: 18px;
 }
 
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container{
-    height: 512px;
     width: 736px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.463);
-    display: grid;
-    grid-template-columns: repeat(2 , 1fr);
+    display: flex;
     border-radius: 30px;
 }
 
 .result{
     background-image: linear-gradient(to top right , var(--Light-slate-blue), var(--Light-royal-blue) );
     border-radius: 30px;
+    width: 50%;
 }
 
 .result>h1{
@@ -81,29 +87,31 @@
 }
 
 .summary{
-    margin-left: 40px;
+    width: 50%;
 }
 
 .summary>h1{
     color: var(--Dark-gray-blue);
-    margin: 44px 0px;
+    margin: 44px 40px;
     font-size: 23px;
 }
 
 .summary .rows{
-    height: 283px;
-    width: 268px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .summary .rows div{
     display: flex;
     align-items: center;
     height: 55px;
-    margin: 15px 0px;
+    margin: 7px 0px;
     position: relative;
     padding-left: 10px;
     border-radius: 15px;
-
+    width: 80%;
 }
 
 .summary .rows div h4:first-of-type{
@@ -149,7 +157,6 @@
     height: 60px;
     width: 268px;
     border-radius: 30px;
-    position: absolute;
     margin: 10px auto;
     color: white;
     font-size: 20px;
@@ -158,22 +165,6 @@
 
 .summary button:hover{
     background-image: none;
-}
-
-@media (max-width:400px) {
-    .container{
-    height: 100%;
-    width: 100%;
-    grid-template-columns: none;
-    grid-template-rows: repeat(2 , fr);
-    }
-    .result{
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-    }
-    .result .msg{
-        width: 290px;
-    }
 }
 .flex-center{
     display: flex;

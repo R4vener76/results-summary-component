@@ -1,0 +1,25 @@
+@media (max-width:400px) {
+    .container{
+        flex-direction: column;
+        border-radius: 0%;
+    }
+    .result{
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        width: 100%;
+    }
+    .result .msg{
+        width: 290px;
+    }
+
+    .summary{
+        width: 100%;
+    }
+    .summary .rows{
+        width: 100%;
+    }
+
+    .summary button{
+        width: 80%;
+    }
+}
