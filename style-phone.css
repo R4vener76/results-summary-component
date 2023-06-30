@@ -1,4 +1,4 @@
-@media (max-width:400px) {
+@media (max-width:375px) {
     .container{
         flex-direction: column;
         border-radius: 0%;
@@ -8,13 +8,25 @@
         border-top-right-radius: 0px;
         width: 100%;
     }
+    .result>h1{
+        margin: 30px;
+    }
+    .result .circle{
+        height: 150px;
+        width: 150px;
+        margin-bottom: 30px;
+    }    
     .result .msg{
         width: 290px;
+        margin-bottom: 30px;
     }
-
     .summary{
         width: 100%;
     }
+    .summary>h1 {
+        margin: 30px 40px;
+        font-size: 16px;
+    }    
     .summary .rows{
         width: 100%;
     }
